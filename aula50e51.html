@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lógica de Programação com JS</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1>Lógica de Programação com JS</h1>
+
+    <script>
+      
+      var arr = new Array(25, 30, 45, 28, 0, 12, 78, 64, 27, 43)
+
+      //EXERCICIO
+      //FAZER A SOMA DOS NUMEROS PARES
+
+      pares = []
+
+      for(i=0; i<arr.length; i++) {
+      
+        if(arr[i] % 2 === 0) {
+          pares.push(arr[i])
+        }
+      };
+
+      soma = 0
+
+      for(n=0; n<pares.length; n++) {
+        soma += pares[n]
+      }
+
+      alert(soma)
+  
+    </script>
+
+  </body>
+</html>
