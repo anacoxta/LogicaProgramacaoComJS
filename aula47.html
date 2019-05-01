@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lógica de Programação com JS</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1>Lógica de Programação com JS</h1>
+
+      <div id='output'></div>
+
+    <script>
+
+      // EXERCICIO
+      
+      var produtos = new Array('caneta', 'tesoura', 'lápis', 'livro', 'vaso')
+
+      var output = document.querySelector('#output')
+
+      //alternativa 1:
+      //output.innerHTML = produtos.toString()
+
+      //alternativa 2:
+      var msg = ''
+      for (var i=0; i < produtos.length; i++) {
+        msg += 'produto ' + (i+1) + ': ' + produtos[i] + '<br/>'
+      }
+      output.innerHTML = msg
+      
+    </script>
+
+  </body>
+</html>
