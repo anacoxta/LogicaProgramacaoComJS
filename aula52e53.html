@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lógica de Programação com JS</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1>Lógica de Programação com JS</h1>
+
+    <div id='output'></div>
+
+    <script>
+      
+      /* USANDO ARRAYS:
+      var tipoProduto = new Array('caneta', 'lapis')
+      var precoProduto = new Array(2.0, 1.6)
+      var estoqueProduto = new Array(15, 12)
+      var marcaProduto = new Array('bic', 'pentel')
+      */
+
+      
+      var prod = new Object()
+      prod.tipo = 'caneta'
+      prod.marca = 'bic'
+      prod.preco = 2.0
+      prod.estoque = 15
+
+      //FUNÇÃO PARA REPOR ESTOQUE <— usar "prod.reposicao(qtd)" no console
+      prod.reposicao = function(qtd) {
+        
+        //se não imputar qtd, a qtd 'default' é 1
+        if (!qtd) {
+          qtd = 1
+        }
+        
+        this.estoque = this.estoque + qtd
+        alert('Reposição do estoque de ' + prod.tipo + '\n Quantidade adquirida: ' +qtd+ '\n Novo saldo disp. em estoque: ' +prod.estoque)
+      }
+      
+      //FUNÇÃO PARA FAZER VENDA <— usar "prod.venda(qtd)" no console
+      prod.venda = function(qtd) {
+        
+        //se não imputar qtd, a qtd 'default' é 1
+        if (!qtd) {
+          qtd = 1
+        }
+
+        this.estoque = this.estoque - qtd
+        alert('Venda de ' + prod.tipo + '\n Quantidade vendida: ' +qtd+ '\n Novo saldo disp. em estoque: ' +prod.estoque)
+      }
+
+      var output = document.querySelector('#output')
+      var msg = ''
+
+      msg += 'produto: ' + prod.tipo + '<br/>'
+      msg += 'marca: ' + prod.marca + '<br/>'
+      msg += 'preco: ' + prod.preco + '<br/>'
+      msg += 'estoque: ' + prod.estoque + '<br/>'
+
+      output.innerHTML = msg
+
+
+    </script>
+
+  </body>
+</html>

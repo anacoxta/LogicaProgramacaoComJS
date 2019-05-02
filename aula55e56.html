@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lógica de Programação com JS</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1>Lógica de Programação com JS</h1>
+
+      <div id='output'></div>
+
+    <script>
+      
+        // EXERCICIO
+        // CRIAR UM ARRAY COM TRES OBJETOS
+        // OS OBJETOS TEM 2 PROPRIEDADES: NOME E EMAIL
+        // DEPOIS MOSTRAR NA TELA
+      
+      var contatos = [
+        {'nome':'Renato', 'email':'renato@mail.com'},
+        {'nome':'Joana', 'email':'joana@mail.com'},
+        {'nome':'Renan', 'email':'renan@mail.com'}
+      ]
+
+      var output = document.querySelector('#output')
+
+      var msg = ''
+
+      for (i=0; i<contatos.length; i++) {
+        msg += 'Nome: ' + contatos[i].nome + '<br/>'
+        msg += 'E-mail: ' + contatos[i].email + '<br/><br/>'
+
+        output.innerHTML = msg
+      }
+
+
+
+    </script>
+
+  </body>
+</html>
