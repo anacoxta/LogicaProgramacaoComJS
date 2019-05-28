@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lógica de Programação com JS</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1>Loteria</h1>
+    <div id="output"></div>
+
+    <script>
+
+        function sortear() {
+          return Math.floor(Math.random() * 60)
+        }
+
+        var sorteados = []
+        
+        for ( i=0 ; i<6 ; i++ ) {
+          sorteados[i] = sortear()
+        }
+
+        console.log(sorteados)
+      
+    </script>
+  </body>
+</html>

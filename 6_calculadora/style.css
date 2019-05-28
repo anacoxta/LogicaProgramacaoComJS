@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Iceland|Roboto&display=swap');
+
+body {
+  background: rgb(22, 22, 84);
+  background: linear-gradient(315deg, rgba(22,22,84,1) 0%, rgba(66,180,203,1) 100%);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Iceland', cursive;
+}
+
+#calculator {
+  width: 200px;
+  background: rgb(198, 165, 122);
+  background: linear-gradient(
+    0deg,
+    rgb(134, 114, 93) 0%,
+    rgb(198, 165, 122) 100%
+  );
+
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  margin: 15px auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+  grid-template-rows: auto repeat(5, 40px);
+}
+
+button {
+  padding: 0.25em;
+  background-color: #cec2b2;
+  border-top: solid 2px #e8dbca;
+  border-left: solid 2px #e8dbca;
+  border-bottom: solid 2px #b7ac9e;
+  border-right: solid 2px #b7ac9e;
+  border-radius: 2px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  color: #413729;
+}
+
+#display {
+  padding: 10px;
+  text-align: right;
+  background-image: linear-gradient(#f0f0f0, #f4f4f4);
+  border-top: solid 2px #e6e6e6;
+  border-left: solid 2px #e6e6e6;
+  border-bottom: solid 2px #fff;
+  border-right: solid 2px #fff;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  grid-column: 1 / -1;
+  font-family: 'Iceland', cursive;
+  font-size: 1.6rem;
+}
+
+.igual {
+  background-color: #dfcbb4;
+  grid-row: 5 / 7;
+  grid-column: 4 / 5;
+}
+
+.zero {
+  /* background-color: #adadad; */
+  grid-column: 1 / 3;
+}

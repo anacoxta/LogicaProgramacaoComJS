@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Simple Calculator</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div id="calculator">
+      <div id="display">0</div>
+
+      <button onclick="allCancel()">AC</button>
+      <button onclick="percent()">%</button>
+      <button onclick="operation('*')">✕</button>
+      <button onclick="operation('/')">÷</button>
+      <button onclick="addDigit('7')">7</button>
+      <button onclick="addDigit('8')">8</button>
+      <button onclick="addDigit('9')">9</button>
+      <button onclick="operation('+')">+</button>
+      <button onclick="addDigit('4')">4</button>
+      <button onclick="addDigit('5')">5</button>
+      <button onclick="addDigit('6')">6</button>
+      <button onclick="operation('-')">−</button>
+      <button onclick="addDigit('1')">1</button>
+      <button onclick="addDigit('2')">2</button>
+      <button onclick="addDigit('3')">3</button>
+      <button class="igual" onclick="equalTo()">=</button>
+      <button class="zero" onclick="addDigit('0')">0</button>
+      <button onclick="decimalSeparator()">.</button>
+    </div>
+
+    <script src="./script.js"></script>
+
+  </body>
+</html>
