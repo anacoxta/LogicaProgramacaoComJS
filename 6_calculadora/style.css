@@ -1,69 +1,98 @@
 @import url('https://fonts.googleapis.com/css?family=Iceland|Roboto&display=swap');
 
+:root {
+  --btn1: #ebe6e0;
+  --btn2: #d7cdc1;
+  --btn3: #cec2b2;
+  --btn4: #c3b5a2;
+  --btn-text: #2f271e;
+}
+
 body {
-  background: rgb(22, 22, 84);
-  background: linear-gradient(315deg, rgba(22,22,84,1) 0%, rgba(66,180,203,1) 100%);
   width: 100vw;
   height: 100vh;
+  background: rgb(22, 22, 84);
+  background: linear-gradient(
+    315deg,
+    rgba(22, 22, 84, 1) 0%,
+    rgba(66, 180, 203, 1) 100%
+  );
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Iceland', cursive;
 }
 
 #calculator {
-  width: 200px;
+  width: 12.5rem;
+  padding: 1.25rem;
+  margin: .95rem auto;
   background: rgb(198, 165, 122);
   background: linear-gradient(
     0deg,
     rgb(134, 114, 93) 0%,
     rgb(198, 165, 122) 100%
   );
-
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-  margin: 15px auto;
-
+  border-radius: .3rem;
+  box-shadow: 0 0 .6rem rgba(0, 0, 0, 0.8);
   display: grid;
+  grid-gap: .5rem;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 5px;
-  grid-template-rows: auto repeat(5, 40px);
+  grid-template-rows: auto repeat(5, 2.5rem);
 }
 
-button {
-  padding: 0.25em;
-  background-color: #cec2b2;
-  border-top: solid 2px #e8dbca;
-  border-left: solid 2px #e8dbca;
-  border-bottom: solid 2px #b7ac9e;
-  border-right: solid 2px #b7ac9e;
-  border-radius: 2px;
+button,
+button:link,
+button:visited {
   font-family: 'Roboto', sans-serif;
-  font-size: 1.2rem;
-  color: #413729;
+  font-size: 1.1rem;
+  color: var(--btn-text);
+  background-color: var(--btn2);
+  box-shadow: 
+    inset 1px 1px 0px 1px var(--btn1),
+    inset 0px 0px 0px 2px var(--btn3);
+  border-radius: .2rem;
+  border: 0;
+  outline: 0;
+  padding: 0;
+}
+
+button:hover,
+button:focus {
+  box-shadow: 
+    inset 1px 1px 0px 1px var(--btn1),
+    inset 0px 0px 0px 2px var(--btn3),
+    0px 0px 0px 2px #a18869, /* <--- calculator body color (approx.) */
+    0px 0px 0px 3px var(--btn-text); /* <--- outer highlight */
+}
+
+button:active {
+  background-color: var(--btn3);
+  box-shadow: 
+    inset 1px 1px 0px 1px var(--btn4),
+    inset 0px 0px 0px 2px var(--btn2),
+    0px 0px 0px 2px #a18869, /* <--- calculator body color (approx.) */
+    0px 0px 0px 3px #7c6950; /* <--- outer highlight */
 }
 
 #display {
-  padding: 10px;
+  padding: .6rem;
   text-align: right;
   background-image: linear-gradient(#f0f0f0, #f4f4f4);
-  border-top: solid 2px #e6e6e6;
-  border-left: solid 2px #e6e6e6;
-  border-bottom: solid 2px #fff;
-  border-right: solid 2px #fff;
-  border-radius: 4px;
-  margin-bottom: 15px;
+  border: solid 2px var(--btn2);
+  border-bottom: #fff;
+  border-right: #fff;
+  border-radius: .2rem;
+  margin-bottom: .8rem;
   grid-column: 1 / -1;
   font-family: 'Iceland', cursive;
   font-size: 1.6rem;
 }
 
 .igual {
-  background-color: #dfcbb4;
   grid-row: 5 / 7;
   grid-column: 4 / 5;
+  font-size: 1.6rem;
 }
 
 .zero {
