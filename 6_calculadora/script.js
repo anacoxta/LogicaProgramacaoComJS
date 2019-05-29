@@ -3,6 +3,76 @@ var operator = null
 var num2 = ''
 var pressedEqualKey = false
 
+function keyboard(event) {
+  var uni = event.charCode || event.keyCode // Get the Unicode value
+  var y = String.fromCharCode(uni) // Convert the value into a character
+  console.log('You pressed ' + y + '(unicode: ' + uni + ')')
+
+  switch (uni) {
+    case 13: //enter
+      equalTo()
+      break
+    case 61: //equal =
+      equalTo()
+      break
+    case 32: //spacebar
+      allCancel()
+      break
+    case 37: //percentage
+      // aaaaa
+      break
+    case 42: //operator *
+      operation('*')
+      break
+    case 43: //operator +
+      operation('+')
+      break
+    case 45: //operator -
+      operation('-')
+      break
+    case 47: //operator /
+      event.preventDefault()
+      operation('/')
+      break
+    case 48: //0
+      addDigit(0)
+      break
+    case 49: //1
+      addDigit('1')
+      break
+    case 50: //2
+      addDigit('2')
+      break
+    case 51: //3
+      addDigit('3')
+      break
+    case 52: //4
+      addDigit('4')
+      break
+    case 53: //5
+      addDigit('5')
+      break
+    case 54: //6
+      addDigit('6')
+      break
+    case 55: //7
+      addDigit('7')
+      break
+    case 56: //8
+      addDigit('8')
+      break
+    case 57: //9
+      addDigit('9')
+      break
+    case 44: //decimal ,
+      decimalSeparator()
+      break
+    case 46: //decimal .
+      decimalSeparator()
+      break
+  }
+}
+
 function show(value) {
   document.getElementById('display').innerHTML = value
 }
