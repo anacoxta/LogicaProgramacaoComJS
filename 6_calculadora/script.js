@@ -85,6 +85,14 @@ function allCancel() {
 }
 
 function addDigit(key) {
+
+  if (pressedEqualKey) {
+    pressedEqualKey = false
+    num1 = key
+    show(num1)
+    return
+  }
+
   if (!operator) {
     num1 === '0' ? (num1 = key) : (num1 += key)
     show(num1)
@@ -95,10 +103,8 @@ function addDigit(key) {
 }
 
 function operation(btn) {
-  if (pressedEqualKey) {
-    pressedEqualKey = false
-    num2 = ''
-  }
+
+  pressedEqualKey = false
 
   if (!operator || num2 === '') {
     operator = btn
@@ -113,8 +119,8 @@ function operation(btn) {
 
 function calculation() {
   var result = 0
-  num1_float = parseFloat(num1)
-  num2_float = parseFloat(num2)
+  var num1_float = parseFloat(num1)
+  var num2_float = parseFloat(num2)
 
   // THE CALCULATIONS MUST BE MULTIPLIED (AND THEN DIVIDED) BY A MULTIPLE OF TEN
   // TO AVOID THE JS BUG WHERE IT DOESN'T HANDLE DECIMALS ALL THAT WELL
@@ -142,6 +148,8 @@ function equalTo() {
   pressedEqualKey = true
   var result = calculation()
   num1 = result
+  operator = null
+  num2 = ''
   show(num1)
 }
 
@@ -162,5 +170,18 @@ function decimalSeparator() {
   } else {
     num1 += '.'
     show(num1)
+  }
+}
+
+function percentCalc() {
+  if (!num2) {
+    num2 = ''
+    num1 = ''
+    show('0')
+  } else {
+    var percent = (num1 * num2) / 100
+    num2 = percent
+
+    show(num2)
   }
 }
