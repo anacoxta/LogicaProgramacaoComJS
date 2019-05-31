@@ -87,6 +87,7 @@ button:active {
   grid-column: 1 / -1;
   font-family: 'Iceland', cursive;
   font-size: 1.6rem;
+  overflow: hidden;
 }
 
 .igual {

@@ -8,9 +8,12 @@ https://www.udemy.com/logica-de-programacao-com-javascript-iniciando-no-frontend
 
 - [x] Operações simples (adição, subtr, multipl, divisão)
 - [x] Botão para limpar display (AC)
-- [x] Lida com números decimais, contornando a limitação nativa do Javascript[(*)](http://adripofjavascript.com/blog/drips/avoiding-problems-with-decimal-math-in-javascript.html)
+- [x] Evita a limitação nativa do Javascript de lidar com decimais[(*)](http://adripofjavascript.com/blog/drips/avoiding-problems-with-decimal-math-in-javascript.html) através de 'scaling'
 - [x] Cálculo percentual
-- [x] Aceita input do teclado, tornando-se mais acessível
+- [x] Aceita input do teclado, tornando-se mais acessível (não fazia parte do desafio proposto, mas *why not?*)
+
+Também não faz parte do desafio, mas seria muito legal limitar — eventualmente — em 10 ou 12 o número de dígitos que aparecem no display. De forma que 1,66666666666666(...) fosse arredondado para 1,6666666667 e números como 9438752390437765 dessem erro por serem grandes demais. Então fica aí a observação, para implementação futura.  
   
-Veja o resultado do desafio:    
-[<img src="https://blog.codepen.io/wp-content/uploads/2012/06/codepen-wordmark-display-inside-black@10x.png" width="150">](https://codepen.io/anacoxta/full/xNJbaM)
+Veja o resultado na prática, com todas as funcionalidades implementadas até agora, clicando no printscreen:  
+[<img src='./6_calculadora/screenshot.png'>](https://codepen.io/anacoxta/full/xNJbaM)
+
