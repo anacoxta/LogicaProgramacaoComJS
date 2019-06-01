@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lógica de Programação com JS</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1>Lógica de Programação com JS</h1>
+
+    <script>
+
+      // problema:
+      // usuario digita duas notas
+      // sistema calcula a media e informa se foi aprovado
+      // a nota de corte é 5
+      // MAS...
+      ///se uma das notas for 0, reprova automaticamente
+
+      n1 = parseFloat(prompt('Digite a primeira nota:'))
+      n2 = parseFloat(prompt('Digite a segunda nota:'))
+      media = (n1+n2)/2
+
+      if (n1 === 0 || n2 === 0 || media < 5) {
+        alert('você foi reprovado')
+      } else {
+        alert('você foi aprovado')
+
+      }
+
+    </script>
+  </body>
+</html>

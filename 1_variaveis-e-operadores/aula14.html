@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lógica de Programação com JS</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1>Lógica de Programação com JS</h1>
+
+    <script>
+
+      // problema:
+      // usuário digita duas notas, sistema retorna mensagem dizendo se foi aprovado
+      // nota de corte = 5
+
+      var n1 = parseFloat(prompt('Nota 1:'))
+      var n2 = parseFloat(prompt('Nota 2:'))
+      
+      var media = (n1+n2)/2
+      var status = ''
+
+      if (media >= 5) {
+        status = 'aprovado'
+      } else {
+        status = 'reprovado'
+      }
+
+      alert('Sua média foi ' + media + ' e você foi ' + status +'.')
+
+    </script>
+
+  </body>
+</html>
