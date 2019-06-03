@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lógica de Programação com JS</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1>Lógica de Programação com JS</h1>
+
+    <script>
+
+      var n = parseFloat(prompt('digite um numero'))
+
+      var indice = 1001 // <--- ATENÇÃO
+
+
+      /* ################################################################### */
+      /* LOOP WHILE -------------------------------------------------------- */
+      /* ################################################################### */
+
+      document.write('[ Loop WHILE ]<br/><br/>')
+
+      while (indice <= 1000) {
+        document.write(n + ' x ' + indice + ' = ' + n * indice + '<br/>')
+        indice++
+      }
+
+      document.write('saiu do loop WHILE<br/><br/><br/>')
+    
+
+      // input 5
+      // prints:
+      // 'saiu do loop'
+      // pois a condição é falsa
+      
+
+
+      /* ################################################################### */
+      /* LOOP DO WHILE ----------------------------------------------------- */
+      /* ################################################################### */
+
+      document.write('[ Loop DO WHILE ]<br/><br/>')
+      
+      do {
+        document.write(n + ' x ' + indice + ' = ' + n * indice + '<br/>')
+        indice++
+
+      } while (indice <= 1000)
+      
+      document.write('saiu do loop DO WHILE<br/><br/><br/>')
+
+      // input 5
+      // prints
+      // '5 x 1001 = 5005
+      // saiu do loop'
+      
+      // ou seja: ele roda ao menos uma vez, mesmo que a condição seja falsa
+      
+      
+      
+      /* ################################################################### */
+      /* LOOP FOR ---------------------------------------------------------- */
+      /* ################################################################### */
+
+      document.write('[ Loop FOR ]<br/><br/>')
+
+      for (var i = 1; i <= 1000; i++) {
+        document.write(n + ' x ' + i + ' = ' + n * i + '<br/>')
+      }
+
+      document.write('saiu do loop FOR')
+
+      
+
+    </script>
+  </body>
+</html>

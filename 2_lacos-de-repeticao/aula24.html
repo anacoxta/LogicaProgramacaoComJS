@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lógica de Programação com JS</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1>Lógica de Programação com JS</h1>
+
+    <div id="result"></div>
+
+    <script>
+      // exercicio:
+      // usuario digita um numero X
+      // sistema msotra a tabuada dele, multiplicando de 1 a 1000
+
+      /* MINHA RESOLUÇÃO ---------------------------------------------------- */
+
+      var result = document.querySelector('#result')
+
+      var n = parseFloat(prompt('digite um numero'))
+      var linha = ''
+
+      for (i = 1; i <= 1000; i++) {
+        var mult = n * i
+
+        linha = n + ' x ' + i + ' = ' + mult + '<br/>'
+        result.innerHTML += linha
+      }
+
+      /* RESOLUÇÃO DO CURSO ------------------------------------------------- */
+
+      // var n = parseFloat(prompt('digite um numero'))
+      // var indice = 1
+      // while (indice <= 1000) {
+      //   document.write(n + ' x ' + indice + ' = ' + n * indice + '<br/>')
+      //   indice = indice + 1
+      // }
+      // document.write('saiu do loop')
+      
+    </script>
+  </body>
+</html>

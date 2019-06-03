@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lógica de Programação com JS</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1>Lógica de Programação com JS</h1>
+
+    <div id="result"></div>
+
+    <script>
+      // exercício:
+      // mostre na tela todos os anos a partir de 1004 até 2017, pulando de 4 em quatro anos
+      // ex: 1004, 1008, 1012,...
+
+      /* MINHA RESOLUÇÃO ----------------------------------------------------*/
+      
+      var result = document.querySelector('#result')
+      
+      for (ano=1004; ano<=2017; ano++) {
+        
+        if (ano % 4 === 0) {
+          result.innerHTML += ano + '<br/>'
+        }
+        
+      }
+      
+      /* RESOLUÇÃO DO CURSO ----------------------------------------------------*/
+      
+      // var year = 1004
+
+      // while(year <= 2017) {
+      //   document.write(year + '<br/>')
+      //   year += 4
+      // }
+      
+    </script>
+  </body>
+</html>

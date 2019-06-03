@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lógica de Programação com JS</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1>Lógica de Programação com JS</h1>
+
+    <div id="result"></div>
+
+    <script>
+      // exercício:
+      // mostrar os anos bissextos.
+      // para eles serem bissextos, as regras são:
+      // devem ser múltiplos de 4
+      // NÃO são múltiplos de 100 (ex: 1900 não é bissexto), exceto se forem múltiplos de 400
+
+      /* MINHA RESOLUÇÃO ----------------------------------------------------*/
+      
+      // var result = document.querySelector('#result')
+
+      // for (ano = 1004; ano <= 2050; ano += 4) {
+
+      //   if (ano % 100 === 0 && ano % 400 === 0) {
+
+      //     result.innerHTML += ano + ' (múltiplo de 4, de 100 e de 400)<br/>'
+
+      //   } else if (ano % 100 !== 0) {
+
+      //     result.innerHTML += ano + ' (múltiplo de 4, mas NÃO de 100)<br/>'
+
+      //   }
+      // }
+      
+      /* RESOLUÇÃO DO CURSO ----------------------------------------------------*/
+      
+        var ano = 1004
+
+        while(ano <= 2017) {
+          if (ano % 100 !== 0 || ano % 400 === 0) {
+            document.write(ano + '</br>')
+          } else {
+            document.write(ano + ' não é bissexto</br>')
+          }
+          ano+=4
+        }
+
+
+      
+    </script>
+  </body>
+</html>

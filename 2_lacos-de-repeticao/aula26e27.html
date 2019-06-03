@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lógica de Programação com JS</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1>Lógica de Programação com JS</h1>
+
+    <div id="result"></div>
+
+    <script>
+      // exercício:
+      // repetir o exercício da aula 24, mas inserindo uma <hr/> na mudança das dezenas
+      // (ex: entre o 10 e o 11, entre o 20 e 0 21, etc)
+
+      /* MINHA RESOLUÇÃO ----------------------------------------------------*/
+      var result = document.querySelector('#result')
+
+      var n = parseFloat(prompt('digite um numero'))
+      var linha = ''
+
+      for (i = 1; i <= 1000; i++) {
+
+        var mult = n * i
+
+        if (i % 10 === 0) {
+
+          linha = n + ' x ' + i + ' = ' + mult + '<hr/>'
+          result.innerHTML += linha
+
+
+        } else {
+
+          linha = n + ' x ' + i + ' = ' + mult + '<br/>'
+          result.innerHTML += linha
+
+        }
+      }
+    </script>
+  </body>
+</html>
