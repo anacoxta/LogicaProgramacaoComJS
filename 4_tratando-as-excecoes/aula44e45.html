@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lógica de Programação com JS</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1>Lógica de Programação com JS</h1>
+
+    <!-- exercicio: -->
+    <!-- qdo entra na pagina, usuário digita dois numeros que representam
+      os lados de um retangulo e o sistema mostra automaticamente na tela a área.
+      o mesmo código roda no clique de um botão -->
+    <!-- valide os dados inputados -->
+
+    <button id="calcular">Calcular a área</button>
+    <div id="output"></div>
+
+    <script>
+      var output = document.querySelector('#output')
+      var botao = document.querySelector('#calcular')
+
+      function valida(l, h) {
+        try {
+          var area = l * h
+        } catch (err) {
+          alert(err)
+          return
+        }
+
+        return area
+      }
+
+      function retangulo() {
+        var l = parseFloat(prompt('Digite a largura do retângulo'))
+        var h = parseFloat(prompt('Digite a altura do retângulo'))
+
+        try {
+          if (l === undefined || h === undefined)
+            throw 'É necessário definir as duas medidas'
+          if (isNaN(l) || isNaN(h)) throw 'Medida inválida, use apenas números'
+          var area = l * h
+        } catch (err) {
+          alert(err)
+        }
+
+        output.innerHTML =
+          'largura: ' +
+          l +
+          '<br/>' +
+          'altura: ' +
+          h +
+          '<br/><br/>' +
+          'ÁREA TOTAL: ' +
+          area
+      }
+
+      retangulo()
+
+      botao.addEventListener('click', retangulo)
+    </script>
+  </body>
+</html>

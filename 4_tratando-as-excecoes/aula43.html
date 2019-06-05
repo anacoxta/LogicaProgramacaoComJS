@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lógica de Programação com JS</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1>Lógica de Programação com JS</h1>
+
+    <!-- exercicio:
+      criar uma calculadora rudimentar (vide aula35e36) -->
+    <!-- valide os dados inputados -->
+    
+    <button onclick="iniciarCalculo('+')">+</button>
+    <button onclick="iniciarCalculo('-')">-</button>
+    <button onclick="iniciarCalculo('*')">*</button>
+    <button onclick="iniciarCalculo('/')">/</button>
+    <div id="output"></div>
+
+    <script>
+      var n1 = prompt('digite um numero')
+      n1 = parseFloat(n1)
+
+      escreve(n1)
+
+      function escreve(mensagem) {
+        var output = document.querySelector('#output')
+        output.innerHTML = mensagem
+      }
+
+
+      function iniciarCalculo(simbolo) {
+        var n1 = parseFloat(document.querySelector('#output').textContent)
+        var n2 = parseFloat(prompt('digite outro numero'))
+
+        try{
+          var msg = calcular(simbolo, n1, n2)
+        } catch(err) {
+          console.log(err)
+          return
+        }
+        escreve(msg)
+      }
+      
+      function calcular(simbolo, n1, n2) {
+
+        if (simbolo!=='+'&&simbolo!=='-'&&simbolo!=='*'&&simbolo!=='/') {
+          throw new Error('não é uma operação')
+        }
+
+        if ( isNaN(n1) || isNaN(n2)) {
+          throw new Error('não é um número válido')
+        }
+
+        var numeroCalculado = null
+
+        switch (simbolo) {
+          case '+':
+            numeroCalculado = n1 + n2
+            break
+          case '-':
+            numeroCalculado = n1 - n2
+            break
+          case '*':
+            numeroCalculado = n1 * n2
+            break
+          case '/':
+            numeroCalculado = n1 / n2
+            break
+        }
+        return numeroCalculado
+      }
+
+    </script>
+
+  </body>
+</html>
