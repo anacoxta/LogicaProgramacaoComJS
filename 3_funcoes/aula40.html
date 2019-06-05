@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lógica de Programação com JS</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1>Lógica de Programação com JS</h1>
+
+    <!-- exercicio: -->
+    <!-- assim que entra na pagina,
+      usuário digita dois numeros que representam os lados de um retangulo -->
+    <!-- se clicar no botão 'calcular área (alert)',
+      sistema mostra a área total do retangulo em um alert -->
+    <!-- se clicar no botão 'calcular área (div)',
+      sistema mostra a área total do retangulo em uma div -->
+
+
+    <!-- MINHA RESOLUÇÃO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+    <button id='alert'>Calcular a área (alert)</button>
+    <button id='div'>Calcular a área (div)</button>
+    <div id='output'></div>
+
+    <script>
+    var l = parseFloat(prompt('Digite a largura do retângulo'))
+    var h = parseFloat(prompt('Digite a altura do retângulo'))
+    var alertBTN = document.querySelector('#alert')
+    var divBTN = document.querySelector('#div')
+
+    function resultado(target) {
+
+      target == alertBTN ? linebreak = '\n' : linebreak = '<br/>'
+
+      var area = l * h
+      var result = 
+        'largura: ' + l + linebreak +
+        'altura: ' + h + linebreak + linebreak +
+        'ÁREA TOTAL: ' + area
+
+      return result
+    }
+
+    alertBTN.addEventListener('click', function() {
+      alert(resultado(alertBTN))
+    })
+
+    divBTN.addEventListener('click', function() {
+      var output = document.querySelector('#output')
+      output.innerHTML = resultado(divBTN)
+    })
+
+    </script>
+
+
+    <!-- RESOLUÇÃO DO CURSO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+    <!--         
+    <button onclick="mostrarAreaAlert(largura, altura)">Mostrar área no alert</button>    
+    <button onclick="mostrarAreaOutput(largura, altura)">Mostrar área no output</button>    
+    <div id="output"></div>
+
+    <script>
+
+      function mostrarAreaAlert() {
+        var largura = prompt('digite a largura')
+        largura = parseFloat(largura)
+        var altura = prompt('digite a altura')
+        altura = parseFloat(altura)
+        
+        var area = calcularArea(largura, altura)
+        alert('a área é ' + area)
+      }
+
+      function mostrarAreaOutput() {
+        var largura = prompt('digite a largura')
+        largura = parseFloat(largura)
+        var altura = prompt('digite a altura')
+        altura = parseFloat(altura)
+        
+        var area = calcularArea(largura, altura)
+        document.querySelector('#output').innerHTML = 'a área é ' + area
+      }
+
+      function calcularArea (l, a) {
+        return l * a
+      }
+
+    </script>
+    -->
+  </body>
+</html>

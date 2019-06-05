@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lógica de Programação com JS</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1>Lógica de Programação com JS</h1>
+
+    <!-- exercicio:
+      criar uma calculadora rudimentar (vide aula35e36) -->
+    <!-- novidade: 
+      em todos os botões o onclick deve ser a função 'calcular()',
+      passando o símbolo da operação como parâmetro -->
+
+    <!-- MINHA RESOLUÇÃO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+    
+    <div id="output"></div>
+    <button onclick="calcular('+')">+</button>
+    <button onclick="calcular('-')">-</button>
+    <button onclick="calcular('*')">*</button>
+    <button onclick="calcular('/')">/</button>
+
+    <script>
+      var n1 = parseFloat(prompt('digite um numero'))
+
+      function calcular(operador) {
+
+        var n2 = parseFloat(prompt('digite um numero'))
+
+        switch (operador) {
+          case '+':
+            n1 += n2
+            break
+          case '-':
+            n1 -= n2
+            break
+          case '*':
+            n1 *= n2
+            break
+          case '/':
+            n1 /= n2
+            break
+        }
+
+        mostrar(n1)
+      }
+
+      function mostrar(resultado) {
+        var output = document.querySelector('#output')
+        output.innerHTML = resultado
+      }
+
+    </script>
+   
+
+    <!-- RESOLUÇÃO DO CURSO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+    <!-- 
+    <button onclick="calcular('+')">+</button>
+    <button onclick="calcular('-')">-</button>
+    <button onclick="calcular('*')">*</button>
+    <button onclick="calcular('/')">/</button>
+    <div id="output"></div>
+
+    <script>
+      var n1 = prompt('digite um numero')
+      n1 = parseFloat(n1)
+
+      function calcular(simbolo) {
+        var n = prompt('digite outro numero')
+        n = parseFloat(n)
+
+        switch (simbolo) {
+          case '+':
+            n1 += n
+            break
+          case '-':
+            n1 -= n
+            break
+          case '*':
+            n1 *= n
+            break
+          case '/':
+            n1 /= n
+            break
+        }
+
+        escreve()
+      }
+
+      function escreve() {
+        var output = document.querySelector('#output')
+        output.innerHTML = n1
+      }
+    </script>
+     -->
+  </body>
+</html>

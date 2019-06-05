@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lógica de Programação com JS</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1>Lógica de Programação com JS</h1>
+
+    <!-- exercicio: -->
+    <!-- criar uma calculadora rudimentar -->
+
+    <!-- MINHA RESOLUÇÃO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+
+    <div id="output"></div>
+    <button id="soma">+</button>
+    <button id="subtr">-</button>
+    <button id="multipl">*</button>
+    <button id="divis">/</button>
+
+    <script>
+      var output = document.querySelector('#output')
+      var somaBTN = document.querySelector('#soma')
+      var subtrBTN = document.querySelector('#subtr')
+      var multiplBTN = document.querySelector('#multipl')
+      var divisBTN = document.querySelector('#divis')
+
+      var n1 = parseFloat(prompt('digite um numero:'))
+      showResult()  
+
+      var n2 = ''
+
+
+      function showResult() {
+        output.innerHTML = n1
+      }
+
+      somaBTN.addEventListener('click', function() {
+        n2 = parseFloat(prompt('Devo somar que número a ' + n1 + '?'))
+        n1 = n1 + n2
+        showResult()
+      })
+
+      subtrBTN.addEventListener('click', function() {
+        n2 = parseFloat(prompt('Devo subtrair que número de ' + n1 + '?'))
+        n1 = n1 - n2
+        showResult()
+      })
+
+      multiplBTN.addEventListener('click', function() {
+        n2 = parseFloat(prompt('Devo multiplicar ' + n1 + ' por qual número?'))
+        n1 = n1 * n2
+        showResult()
+      })
+
+      divisBTN.addEventListener('click', function() {
+        n2 = parseFloat(prompt('Devo dividir ' + n1 + ' por qual número?'))
+        n1 = n1 / n2
+        showResult()
+      })
+    </script>
+
+    <!-- RESOLUÇÃO DO CURSO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+
+    <!-- <div id="output"></div>
+    <button onclick="somar()">+</button>
+    <button onclick="subtrair()">-</button>
+    <button onclick="multiplicar()">*</button>
+    <button onclick="dividir()">/</button>
+
+    <script>
+      var n1 = prompt('digite um numero')
+      n1 = parseFloat(n1)
+
+      function escreve() {
+        var output = document.querySelector('#output')
+        output.innerHTML = n1
+      }
+
+      function somar() {
+        var n = prompt('digite outro numero')
+        n = parseFloat(n)
+
+        n1 += n
+        escreve()
+      }
+
+      function subtrair() {
+        var n = prompt('digite outro numero')
+        n = parseFloat(n)
+
+        n1 -= n
+        escreve()
+      }
+
+      function multiplicar() {
+        var n = prompt('digite outro numero')
+        n = parseFloat(n)
+
+        n1 *= n
+        escreve()
+      }
+
+      function dividir() {
+        var n = prompt('digite outro numero')
+        n = parseFloat(n)
+
+        n1 /= n
+        escreve()
+      } -->
+    </script>
+  </body>
+</html>

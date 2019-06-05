@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lógica de Programação com JS</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1>Lógica de Programação com JS</h1>
+
+    <!-- exercicio:
+    usuário digita um numero, sistema mostra a tabuada dele de 1 a 1000
+    novas funcionalidades:
+    deixar usuário digitar novo número e limpar o output anterior -->
+
+    <!-- MINHA RESOLUÇÃO #################################################### -->
+    <button id="limpar">Limpar</button>
+    <button id="nova-consulta">Nova consulta</button>
+    <div id="output"></div>
+
+    <script>
+      var output = document.querySelector('#output')
+      var limparBTN = document.querySelector('#limpar')
+      var novaConsultaBTN = document.querySelector('#nova-consulta')
+      var resultado = ''
+
+
+      function consulta() {
+        var num = parseFloat(prompt('Digite um número'))
+
+        for (i=1; i<=1000; i++) {
+          resultado += num + ' x ' + i + ' = ' + (num * i) + '<br/>'
+        }
+
+        output.innerHTML = resultado
+      }
+
+      limparBTN.addEventListener('click', function() {
+        output.innerHTML = ''
+      })
+
+      novaConsultaBTN.addEventListener('click', function() {
+        consulta()
+      })
+
+      consulta()
+    </script>
+
+    <!-- RESOLUÇÃO DO CURSO ################################################ -->
+    <!-- <button onclick="mostrarTabuada()">Criar tabuada</button>
+    <button onclick="limparTabuada()">Limpar tabuada</button>
+    <div id="output"></div>
+
+    <script>
+      var output = document.getElementById('output')
+      var mensagem = ''
+
+      function mostrarTabuada() {
+        limparTabuada()
+        var n = prompt('digite um numero')
+        n = parseFloat(n)
+        var i = 1
+        while (i <= 1000) {
+          mensagem += n + ' x ' + i + ' = ' + n * i + '<br/>'
+          i++
+        }
+        output.innerHTML = mensagem
+      }
+
+      function limparTabuada() {
+        mensagem = ''
+        output.innerHTML = mensagem
+      }
+
+      mostrarTabuada()
+    </script> -->
+  </body>
+</html>
