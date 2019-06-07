@@ -1,0 +1,23 @@
+#botoes {
+  display: grid;
+  max-width: 500px;
+  grid-template-columns: repeat(10, 1fr);
+}
+
+#botoes button {
+  padding: 3px 0;
+}
+
+#limpar {
+  margin-top: 15px;
+}
+
+#sortear, #limpar {
+  padding: 3px;
+  width: 100%;
+  max-width: 500px;
+}
+
+#output {
+  margin-top: 15px;
+}

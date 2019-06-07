@@ -3,25 +3,105 @@
   <head>
     <title>Lógica de Programação com JS</title>
     <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="aula68a70_loteria.css" />
   </head>
   <body>
     <h1>Loteria</h1>
-    <div id="output"></div>
+    <p>Escolha 6 números:</p>
+    <div id="botoes"></div>
+    <button id="limpar">Limpar seleção</button>
+    <button id="sortear">Fazer sorteio</button>
+    <div id="output-sorteio"></div>
+    <div id="resultado"></div>
 
     <script>
+      var botoes = document.querySelector('#botoes')
+      var btns = ''
+      var criaBotoes = criaBotoes()
+
+      function criaBotoes() {
+        for (var i = 1; i <= 60; i++) {
+          btns +=
+            '<button id="btn' +
+            i +
+            '" onclick="escolhido(' +
+            i +
+            ')">' +
+            i +
+            '</button> '
+        }
+        botoes.innerHTML += btns
+      }
+
+      var escolhidos = []
+      var sorteados = []
+
+      document.querySelector('#limpar').addEventListener('click', limpar)
+      document
+        .querySelector('#sortear')
+        .addEventListener('click', loteria, comparar)
+
+      function escolhido(n) {
+        if (escolhidos.length < 6) {
+          escolhidos.push(n)
+          var btnId = '#btn' + n
+          var btnDisable = document.querySelector(btnId)
+          btnDisable.disabled = true
+        } else {
+          alert('apenas os 6 primeiros números selecionados serão considerados')
+        }
+      }
+
+      function limpar() {
+        for (var i = 0; i < escolhidos.length; i++) {
+          var btnId = '#btn' + escolhidos[i]
+          var btnEnable = document.querySelector(btnId)
+          btnEnable.disabled = false
+        }
+        escolhidos = []
+        sorteados = []
+        document.querySelector('#output-sorteio').innerHTML = null
+        document.querySelector('#resultado').innerHTML = null
+      }
+
+      function loteria() {
+
+        var outputSorteio = document.querySelector('#output-sorteio')
+        outputSorteio.innerHTML = null
 
         function sortear() {
           return Math.floor(Math.random() * 60)
         }
 
-        var sorteados = []
-        
-        for ( i=0 ; i<6 ; i++ ) {
-          sorteados[i] = sortear()
+        var i = 0
+        while (i < 6) {
+          var num = sortear()
+
+          while (sorteados.indexOf(num) !== -1) {
+            num = sortear()
+          }
+          sorteados[i] = num
+          i++
         }
 
-        console.log(sorteados)
-      
+        outputSorteio.innerHTML += '<h3>sorteados: ' + sorteados + '</h3>'
+
+        comparar()
+      }
+
+      function comparar() {
+        var comparacao = ''
+        for (var e = 0; e < escolhidos.length; e++) {
+          for (var s = 0; s < sorteados.length; s++) {
+            if (escolhidos[e] == sorteados[s]) {
+              comparacao += 'Você acertou o número ' + escolhidos[e] + '<br/>'
+            }
+          }
+
+        }
+        var resultado = document.querySelector('#resultado')
+        resultado.innerHTML = comparacao
+      }
     </script>
   </body>
 </html>

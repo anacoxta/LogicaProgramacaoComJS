@@ -1,0 +1,47 @@
+html, body {
+  font-family: sans-serif;
+}
+
+#submit, #limpar {
+  margin-top: 15px;
+}
+
+#submit, #limpar, #defaults {
+  padding: 3px;
+  width: 100%;
+  max-width: 500px;
+}
+
+#output-sorteio {
+  margin-top: 15px;
+  max-width: 500px;
+}
+
+#output-sorteio h3 {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+#output-sorteio #block {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+#output-sorteio #block > div {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 60px;
+  border: solid 5px #ab292e;
+  border-radius: 70px;
+  color: #ab292e;
+  background-color: #f3e1d3;
+  font-size: 1.8rem;
+  font-family: serif;
+}
