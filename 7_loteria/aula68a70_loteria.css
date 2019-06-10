@@ -1,21 +1,56 @@
-#botoes {
-  display: grid;
-  max-width: 500px;
-  grid-template-columns: repeat(10, 1fr);
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ccd3df;
+  font-family: sans-serif;
+  color: #46465e;
+  box-sizing: border-box;
 }
 
-#botoes button {
-  padding: 3px 0;
+#wrapper {
+  max-width: 500px;
+  width: 100%;
 }
+
+#botoes {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(10, 1fr);
+  grid-gap: 2px;
+}
+
+button {
+  padding: 6px 1px;
+  color: #46465e;
+  outline: 0;
+  background-color: #dddbe8;
+  border: solid 1px #aaa6b3;
+}
+
+
+button:hover,
+button:focus {
+  outline: 0;
+  background-color: #eeedf3;
+  border: solid 1px #7b7588;
+}
+
+button:disabled {
+  background-color: #9dc4c6;
+  color: black;
+  border: solid 1px #7b7588;
+}
+
 
 #limpar {
   margin-top: 15px;
+  margin-bottom: 2px;
 }
 
 #sortear, #limpar {
-  padding: 3px;
+  padding: 6px 1px;
   width: 100%;
-  max-width: 500px;
 }
 
 #output {

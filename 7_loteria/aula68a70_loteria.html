@@ -6,14 +6,15 @@
     <link rel="stylesheet" type="text/css" href="aula68a70_loteria.css" />
   </head>
   <body>
-    <h1>Loteria</h1>
-    <p>Escolha 6 números:</p>
-    <div id="botoes"></div>
-    <button id="limpar">Limpar seleção</button>
-    <button id="sortear">Fazer sorteio</button>
-    <div id="output-sorteio"></div>
-    <div id="resultado"></div>
-
+    <div id="wrapper">
+      <h1>Loteria</h1>
+      <p>Escolha 6 números:</p>
+      <div id="botoes"></div>
+      <button id="limpar">Limpar seleção</button>
+      <button id="sortear">Fazer sorteio</button>
+      <div id="output-sorteio"></div>
+      <div id="resultado"></div>
+    </div>
     <script>
       var botoes = document.querySelector('#botoes')
       var btns = ''
@@ -65,7 +66,6 @@
       }
 
       function loteria() {
-
         var outputSorteio = document.querySelector('#output-sorteio')
         outputSorteio.innerHTML = null
 
@@ -97,8 +97,11 @@
               comparacao += 'Você acertou o número ' + escolhidos[e] + '<br/>'
             }
           }
-
         }
+        if (comparacao === '') {
+          comparacao += 'Você não acertou nenhum número!'
+        }
+
         var resultado = document.querySelector('#resultado')
         resultado.innerHTML = comparacao
       }

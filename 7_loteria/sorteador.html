@@ -6,27 +6,31 @@
     <link rel="stylesheet" type="text/css" href="sorteador.css" />
   </head>
   <body>
+    <div id="wrapper">
     <h1>Sorteador</h1>
+    <h4>Parâmetros</h4>
     <form>
       Sortear 
       <input type="number"id="numSortear"name="numSortear"min="1"max="50"value="6"/> 
       número(s) entre 
       <input type="number"id="numMin"name="numMin"min="0"max="1000"value="1"/> 
       e 
-      <input type="number"id="numMax"name="numMax"min="0"max="1000"value="60"/>
+      <input type="number"id="numMax"name="numMax"min="0"max="1000"value="60"/>.
       <br />
+      <h4>Personalização</h4>
       Ordenar os números sorteados:<br />
       <input type="radio" id="crescente" name="ordem" checked>Ordem Crescente</input> 
       <input type="radio" id="decrescente" name="ordem">Ordem Decrescente</input> 
-      <input type="radio" id="semOrdem" name="ordem">Não ordenar</input><br />
+      <input type="radio" id="semOrdem" name="ordem">Não ordenar</input><br /><br />
       <input type="checkbox"id="permitirRepetidos"name="permitirRepetidos"/>
-      Permitir que os números sejam sorteados mais de uma vez<br />
+      Permitir números sorteados repetidos<br />
       <input id="submit"type="submit"value="Sortear"/>
     </form>
 
     <button id="limpar">Limpar sorteio</button><br/>
     <button id="defaults">Restaurar defaults</button>
     <div id="output-sorteio"></div>
+  </div>
 
     <script src="sorteador.js"></script>
 
