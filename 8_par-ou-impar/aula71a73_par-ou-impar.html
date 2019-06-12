@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lógica de Programação com JS</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <h1>Par-ou-ímpar</h1>
+    <form id="form">
+      <p>
+        Digite um número de 0 a 5:
+        <input type="number" id="meuNum" min="0" max="5" value="0" />
+      </p>
+      <p>
+        Escolha:
+        <input type="radio" name="escolha" id="par" value="par" checked /> Par
+        <input type="radio" name="escolha" id="impar" value="impar" /> Ímpar
+      </p>
+      <button id="btn" type="submit" style="margin-bottom: 15px">Jogar</button>
+    </form>
+    <div id="output"></div>
+
+    <script>
+      var numComputador = 0
+      var btn = document.querySelector('#btn')
+
+      btn.addEventListener('click', function(e) {
+        e.preventDefault()
+        jogar()
+      })
+
+      function jogar() {
+        sortear()
+
+        var numJogador = parseInt(document.querySelector('#meuNum').value)
+        var soma = numJogador + numComputador
+
+        var output = document.querySelector('#output')
+        output.innerHTML =
+          'Você jogou o número ' +
+          numJogador +
+          ' e o computador jogou ' +
+          numComputador +
+          '<br/>A soma destes valores é ' +
+          soma
+
+        parOuImpar(soma)
+      }
+
+      function sortear() {
+        numComputador = Math.floor(Math.random() * 6) // 6 = (max-min+1)+ min
+        return numComputador
+      }
+
+      /* Explicação pra função sortear, onde min=0 e max=5 --------
+        function getRandomIntInclusive(min, max) {
+          min = Math.ceil(min); // = 0
+          max = Math.floor(max); // = 5
+          return Math.floor(Math.random() * (max - min + 1)) + min;
+      } --------------------------------------------------------- */
+
+      function parOuImpar(soma) {
+        var form = document.querySelector('#form')
+        form.escolha.value === 'par' ? (paridade = 'PAR') : (paridade = 'ÍMPAR')
+
+        output.innerHTML +=
+          '.<br/><br/>Você escolheu ' + paridade + ', portanto...<br/>'
+
+        if (
+          (soma % 2 === 0 && paridade === 'PAR') ||
+          (soma % 2 !== 0 && paridade === 'ÍMPAR')
+        ) {
+          output.innerHTML += '<h3>Você venceu!</h3>'
+        } else {
+          output.innerHTML += '<h3>Você perdeu :/</h3>'
+        }
+      }
+    </script>
+  </body>
+</html>
