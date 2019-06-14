@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lógica de Programação com JS</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1>Lógica de Programação com JS</h1>
+    <h3>Terminologia</h3>
+    <p><b>VETORES</b> = Array uni-dimensional (um nível)<br/>
+    ex: nomes = ['Maria', 'João', 'José', 'Ana']<br/>
+    nomes[2] === 'José' //true</p>
+    <p><b>MATRIZES</b> = Array multi-dimensional (2+ níveis)<br/>
+    numeros = [[1,2,3], [4,5,6], [7,8,9]]<br/>
+    numeros[1] //[4,5,6]<br/>
+    numeros[1][2] //6<br/>
+    numeros[2][1] //8</p>
+    <hr/>
+    <h3>Desafio</h3>
+    <p>Em cada bimestre um aluno possui 4 notas de 0 a 10.<br>
+    Dado o array notas = [[5,6,4,3],[2,8,5,6],[3,6,4,8],[2,8,4,9]]<br/>
+    mostrar na tela:<br>
+    <ul>
+      <li>As notas,</li>
+      <li>A média de cada bimestre,</li>
+      <li>A média anual</li>
+    </ul></p>
+    <h3>Resolução</h3>
+    <div id="notas"></div>
+    <div id="medias" style="margin:10px 0">
+      <div id="mediaBimestres" style="margin:10px 0"></div>
+      <div id="mediaAno" style="margin:10px 0; font-size: 1.1rem; font-weight: bold;"></div>
+    </div>
+
+    <script>
+
+      var notas = [[5,6,4,3],[2,8,5,6],[3,6,4,8],[2,8,4,9]]
+
+      var divNotas = document.querySelector('#notas')
+      var divBimestres = document.querySelector('#mediaBimestres')
+      var divAno = document.querySelector('#mediaAno')
+
+      var ano = 0
+
+      // Stretching my algorithm muscles, overengineering the heck outta this
+      for (x=0; x<notas.length; x++) {
+   
+        var bim = 0
+
+        //apresenta as notas (separadas por bimestre)
+        divNotas.innerHTML += 'Notas do ' + (x + 1) + 'º bimestre: '
+
+        for (y=0; y<notas[x].length; y++) {
+          divNotas.innerHTML += notas[x][y] + ' '
+
+          //vai somando as notas do bimestre
+          bim += notas[x][y]
+        }
+
+        //quebra a linha depois das notas separadas por bimestre
+        divNotas.innerHTML += '<br>'
+
+        //pega as notas do bimestre, calcula a media e apresenta
+        var mediaBim = bim / notas[x].length
+        divBimestres.innerHTML += 'Média do ' + (x + 1) + 'º bimestre: <b>' + mediaBim + '</b><br/>'
+
+        //repete o processo anterior para o ano
+        ano += mediaBim
+      }
+      var mediaAno = ano / notas.length
+      divAno.innerHTML += 'Média do ano: ' + mediaAno
+
+    </script>
+
+  </body>
+</html>
