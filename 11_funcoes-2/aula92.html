@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lógica de Programação com JS</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1>Lógica de Programação com JS</h1>
+
+    <script>
+
+      /*UTILIZANDO 'MEMOIZAÇÃO' NA FUNÇÃO RECURSIVA */
+
+      var quantasVezesAFuncaoEhChamada_Memoizacao = 0 //para fins didáticos
+
+      function fibonacci(num, cache) {
+        quantasVezesAFuncaoEhChamada_Memoizacao++
+
+        cache = cache || {} // → memoização
+        if (cache[num]) return cache[num] // → memoização
+
+        if (num <= 2) return 1
+        cache[num] = fibonacci(num - 1, cache) + fibonacci(num - 2, cache)
+        return cache[num]
+      }
+
+      console.log('Usando função recursiva com memoização:')
+      console.log(fibonacci(25)) //75025 → quantasVezesAFuncaoEhChamada_Memoizacao = 47 <só nessa chamada!>
+      console.log(fibonacci(12)) //144 → quantasVezesAFuncaoEhChamada_Memoizacao = 21 <só nessa chamada!>
+      console.log(fibonacci(6)) //8 → quantasVezesAFuncaoEhChamada_Memoizacao = 9 <só nessa chamada!>
+      console.log(fibonacci(3)) //2 → quantasVezesAFuncaoEhChamada_Memoizacao = 3 <só nessa chamada!>
+
+
+      
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lógica de Programação com JS</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1>Lógica de Programação com JS</h1>
+
+    <script>
+
+      
+      // EXERCÍCIO:
+      // Criar uma função 'fibonacci' que recebe um número representando
+      // o índice (começando em 1), e informa qual número da Sequência Fibonacci ocupa aquele índice
+      // ex:
+      // fibonacci(3) //2
+      // fibonacci(6) //8
+      // sequência fibonacci = 1 1 2 3 5 8 13 etc
+
+      var quantasVezesAFuncaoEhChamada_Recursiva = 0 //para fins didáticos
+      var quantasVezesAFuncaoEhChamada_Loop = 0 //para fins didáticos
+      
+      /* UTILIZANDO FUNÇÕES RECURSIVAS ---------------------------- */
+
+      function fibonacci(num) {
+        quantasVezesAFuncaoEhChamada_Recursiva++  //para fins didáticos
+        //if num equals 1, returns the 1
+        return num <= 2 ? 1 : fibonacci(num - 1) + fibonacci(num - 2)
+      }
+
+      console.log('Usando função recursiva:')
+      console.log(fibonacci(25)) //75025 → quantasVezesAFuncaoEhChamada_Recursiva = 150049 <só nessa chamada!>
+      console.log(fibonacci(12)) //144 → quantasVezesAFuncaoEhChamada_Recursiva = 287 <só nessa chamada!>
+      console.log(fibonacci(6)) //8 → quantasVezesAFuncaoEhChamada_Recursiva = 15 <só nessa chamada!>
+      console.log(fibonacci(3)) //2 → quantasVezesAFuncaoEhChamada_Recursiva = 3 <só nessa chamada!>
+
+
+
+      /* UTILIZANDO LOOP ------------------------------------------ */
+      function fibonacciLoop(num) {
+        quantasVezesAFuncaoEhChamada_Loop++  //para fins didáticos
+        var a = 1 //número inicial da sequência
+        var b = 0 //a soma
+        var temp
+
+        while (num--) { //dá no mesmo que escrever "while (num > 0)"
+          temp = a
+          a = a+b 
+          b = temp
+        }
+        return b
+      }
+
+      console.log('Usando loop:')
+      console.log(fibonacciLoop(25)) //75025 → quantasVezesAFuncaoEhChamada_Loop = 1 <só nessa chamada!>
+      console.log(fibonacciLoop(12)) //144 → quantasVezesAFuncaoEhChamada_Loop = 1 <só nessa chamada!>
+      console.log(fibonacciLoop(6)) //8 → quantasVezesAFuncaoEhChamada_Loop = 1 <só nessa chamada!>
+      console.log(fibonacciLoop(3)) //2 → quantasVezesAFuncaoEhChamada_Loop = 1 <só nessa chamada!>
+
+      /* TESTE DE MESA DO LOOP WHILE 
+      fibonacciLoop(3)
+      primeira passagem do loop ► num = 3 - 1 = 2
+          temp = a      // a = 1 —> temp = 1 ...    
+          a = a+b       // ... a = 1+0 = 1 ...                                      
+          b = temp      // ... b = 1 ...
+      segunda passagem do loop ► num = 2 - 1 = 1
+          temp = a      // ... a = 1 —> temp = 1 ...
+          a = a+b       // ... a = 1+1 = 2 ...
+          b = temp      // ... b = 1 ...
+      última passagem do loop ► num = 1 - 1 = 0
+          temp = a      // ... a = 2 —> temp = 2 ...
+          a = a+b       // ... a = 2+1 = 3 ...
+          b = temp      // ... b = 2 ...
+      return b ——> 2
+      */
+      
+    </script>
+
+  </body>
+</html>

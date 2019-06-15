@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lógica de Programação com JS</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1>Lógica de Programação com JS</h1>
+
+    <script>
+
+      /* FALANDO DE FUNÇÕES CALLBACK */
+
+      function dizOi(praQuem){
+        console.log('oi', praQuem)
+      }
+
+      dizOi('maria') //oi maria
+
+      /* =========================== */
+
+      function dizOla(paraQuem, callback){
+        if (typeof callback === 'function') {return callback(paraQuem)}
+        console.log('olá', paraQuem)
+      }
+
+      function boaNoite(paraQuem) {console.log('Boa noite', paraQuem)}
+      function boaTarde(paraQuem) {console.log('Boa tarde', paraQuem)}
+
+      dizOla('maria') //olá maria
+      dizOla('daniel', boaNoite) //Boa noite daniel
+      dizOla('renata', boaTarde) //Boa tarde renata
+
+    </script>
+
+  </body>
+</html>

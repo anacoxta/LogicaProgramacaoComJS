@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lógica de Programação com JS</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1>Lógica de Programação com JS</h1>
+
+    <script>
+
+      
+      // EXERCÍCIO:
+      // Criar uma função 'bla' que recebe um número e imprime 'bla' x num na tela
+      // ex:
+      // bla(2) //bla bla
+      // bla(4) //bla bla bla bla
+      
+      /* UTILIZANDO FUNÇÕES RECURSIVAS ---------------------------- */
+
+      function bla(num) {
+        //if num equals 1, returns the string itself
+        return num === 1 ? 'bla ' : 'bla ' + bla(num - 1)
+      }
+
+      console.log('Usando função recursiva:')
+      console.log(bla(5))
+      console.log(bla(2))
+      console.log(bla(1))
+
+
+
+      /* UTILIZANDO LOOP ------------------------------------------ */
+      function blaLoop(num) {
+        var string = ''
+        while (num--) { //dá no mesmo que escrever "while (num > 0)"
+          string += 'bla '
+        }
+        return string
+      }
+
+      console.log('Usando loop:')
+      console.log(blaLoop(5))
+      console.log(blaLoop(2))
+      console.log(blaLoop(1))
+
+
+      /* UTILIZANDO REPEAT DO ES6 -------------------------------- */
+
+      function blaES6(num) {
+          return 'bla '.repeat(num)
+      }
+
+      console.log('Usando repeat():')
+      console.log(blaES6(5))
+      console.log(blaES6(2))
+      console.log(blaES6(1))
+      
+    </script>
+
+  </body>
+</html>

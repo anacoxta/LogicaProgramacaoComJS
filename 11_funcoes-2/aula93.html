@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lógica de Programação com JS</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1>Lógica de Programação com JS</h1>
+
+    <script>
+
+      /* FALANDO DE FUNÇÕES CALLBACK */
+
+      function teste1() { console.log('função "teste1" foi chamada') }
+      function teste2(p) { console.log('função "teste2" foi chamada, recebendo p:', p) }
+
+      function executa(callback) {
+        console.log('função "executa" foi chamada')
+
+        if (typeof callback === 'function') { //se 'callback' for uma função ...
+          callback('teste passando parâmetro pro callback') // ...executa 'callback'
+        }
+      }
+
+      executa(teste1)
+      // ↪ é o equivalente a:
+      // executa(function teste1() { console.log('função "teste1" foi chamada') })
+      
+      executa(teste2)
+      // ↪ esse tem um parâmetro 'p' (= 'teste passando parâmetro pro callback')
+
+      executa(function() {
+        console.log('teste3: testando uma função callback anônima', x)
+      })
+      // ↪ esse tem um parâmetro 'x' (= 'teste passando parâmetro pro callback')
+
+
+    </script>
+
+  </body>
+</html>
