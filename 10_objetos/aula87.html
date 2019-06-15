@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lógica de Programação com JS</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1>Lógica de Programação com JS</h1>
+
+    <script>
+
+      //string, texto e booleano se comportam assim:
+      var nome1 = 'ana'
+      var nome2 = nome1
+      console.log(nome1) //ana
+      console.log(nome2) //ana
+      nome2 = 'maria'
+      console.log(nome1) //ana
+      console.log(nome2) //maria
+      /* ou seja, a atribuição se dá pelo valor em si */
+
+
+      //outros tipos de dado — como arrays — se comportam assim:
+      var nome1 = ['ana']
+      var nome2 = nome1
+      console.log(nome1) //[ana]
+      console.log(nome2) //[ana]
+      nome2[0] = 'maria'
+      console.log(nome1) //[maria] → ter mudado o nome2 fez mudar o nome1 também 
+      console.log(nome2) //[maria]
+      /* ou seja, a atribuição se dá "por referência" */
+
+      
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lógica de Programação com JS</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1>Lógica de Programação com JS</h1>
+    <div id="output"></div>
+    
+    <script>
+      //Exercício: Trocar as strings em 'endereco' por instancias de um objeto Endereco
+
+      // var alunos = [
+      //      {nome: 'daniel', id: 112233, endereco: 'rua faz de conta 2, ap 3, são paulo SP'},
+      //      {nome: 'josé', id: 112244, endereco: 'rua belezura 5, Sao paulo'},
+      //      {nome: 'joão', id: 113344, endereco: 'rua belezura 20, Sao Paulo - perto do josé'},
+      //      {nome: 'maria', id: 114444, endereco: 'rua chuchu 1, RJ'},
+      //      {nome: 'ana', id: 114555, endereco: 'Av belezura 41,  SP'},
+      //  ]
+
+      function Endereco(dados) {
+        this.logradouro = dados.logradouro || ''
+        this.numero = dados.numero || 0
+        this.complemento = dados.complemento
+        this.cidade = dados.cidade
+        this.estado = dados.estado
+      }
+
+      var alunos = [
+        {nome: 'daniel', id: 112233, endereco: new Endereco({logradouro: 'rua faz de conta', numero: 2, complemento: 'ap 3', cidade: 'São Paulo', estado: 'SP'}) },
+        {nome: 'josé', id: 112244, endereco: new Endereco({logradouro: 'rua belezura', numero: 5, cidade: 'São Paulo'}) },
+        {nome: 'joão', id: 113344, endereco: new Endereco({logradouro: 'rua belezura', numero: 20, cidade: 'São Paulo'}) },
+        {nome: 'maria', id: 114444, endereco: new Endereco({logradouro: 'rua chuchu', numero: 1, estado: 'RJ'}) },
+        {nome: 'ana', id: 114555, endereco: new Endereco({logradouro: 'Av belezura', numero: 41, estado: 'SP'}) },
+      ]
+
+      //Exercício: obter um array apenas dos enderecos
+      var enderecos = []
+
+      for (var i=0; i<alunos.length; i++) {
+        enderecos.push(alunos[i].endereco)
+      }
+      console.log(enderecos)
+
+      //Exercício: mostrar no output todas as propriedades dos objetos da array
+      //'enderecos' usando for..in (desde que diferente de undefined)
+
+      var output = document.querySelector('#output')
+      var texto = ''
+
+      for (var i=0; i<enderecos.length; i++) {
+        var endereco = enderecos[i]
+        
+        for (prop in endereco) {
+
+          if (endereco[prop]) {
+            console.log(prop, ' | ', endereco[prop])
+            texto += prop + ': ' + endereco[prop] + '<br/>'
+          }
+        }
+        texto += '<hr/>'
+      }
+
+      output.innerHTML = texto
+
+
+    </script>
+
+  </body>
+</html>

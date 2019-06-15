@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lógica de Programação com JS</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <h1>Lógica de Programação com JS</h1>
+    <div id="output"></div>
+    
+    <script>
+      
+      /* SINTAXE FORMAL */
+      var obj = new Object()
+      obj.nome = 'meu objeto'
+      obj.funcao = function() {
+        console.log('eu sou um método')
+      }
+
+      console.log(obj.nome) //'meu objeto'
+      obj.funcao() //'eu sou um método'
+
+      /* SINTAXE LITERAL */
+      var obj2 = {
+        nome: 'meu objeto 2',
+        funcao: function() {
+          console.log('eu sou o método do obj2')
+        }
+      }
+
+      console.log(obj2.nome) //'meu objeto 2'
+      obj2.funcao() //'eu sou o método do obj2'
+
+      /* OBJETOS CUSTOMIZADOS */
+      
+      //em vez de usar...
+      //var endereco1 = { 'logradouro': 'rua tal', 'numero': 2 }
+      //var endereco2 = { 'logradouro': 'rua qual', 'numero': 166 }
+      //var endereco3 = { 'logradouro': 'rua ali', 'numero': 17 }
+      
+      //usa uma função construtora customizada:
+      function Endereco(lograd, num) {
+        this.logradouro = lograd
+        this.numero = num
+        this.enderecoCompleto = function() {
+          return this.logradouro + ', '+ this.numero
+        }
+      }
+
+      var endereco1 = new Endereco('rua tal', 2)
+      var endereco2 = new Endereco('rua qual', 166)
+      var endereco3 = new Endereco('rua ali', 17)
+
+      console.log('endereço 1: ', endereco1) //endereco1 = { 'logradouro': 'rua tal', 'numero': 2 }
+      console.log('endereço 2: ', endereco2) //endereco2 = { 'logradouro': 'rua qual', 'numero': 166 }
+      console.log('endereço 3: ', endereco3) //endereco3 = { 'logradouro': 'rua ali', 'numero': 17 }
+
+      console.log(endereco1.enderecoCompleto()) //'rua tal, 2'
+      console.log(endereco2.enderecoCompleto()) //'rua qual, 166'
+
+    </script>
+
+  </body>
+</html>
